@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cell&More - Premium Electronics & Mobile Devices</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary: #000000;
+            --secondary: #333333;
+            --accent: #0077B6;
+            --text: #ffffff;
+            --bg: #121212;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background-color: var(--primary);
+            padding: 20px 0;
+            border-bottom: 2px solid var(--accent);
+            text-align: center;
+        }
+        
+        .logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--text);
+            letter-spacing: 2px;
+            margin-bottom: 5px;
+        }
+        
+        .contact-bar {
+            background-color: var(--accent);
+            padding: 10px;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        
+        /* Navigation */
+        nav {
+            background-color: var(--secondary);
+            padding: 15px 0;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+        
+        nav ul li {
+            margin: 0 15px;
+        }
+        
+        nav ul li a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--accent);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        
+        .hero-content h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--accent);
+        }
+        
+        .hero-content p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            max-width: 700px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: var(--primary);
+            padding: 10px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            margin: 0 10px;
+        }
+        
+        .btn:hover {
+            background-color: #005b8c;
+            transform: translateY(-3px);
+        }
+        
+        /* Products Section */
+        .section-title {
+            text-align: center;
+            margin: 50px 0 30px;
+            font-size: 2rem;
+            color: var(--accent);
+        }
+        
+        .price-section {
+            margin-bottom: 50px;
+        }
+        
+        .price-tables {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-between;
+        }
+        
+        .price-table-container {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .price-table-title {
+            background-color: var(--accent);
+            color: var(--primary);
+            padding: 10px;
+            font-weight: bold;
+            text-align: center;
+            border-radius: 5px 5px 0 0;
+        }
+        
+        .price-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+        }
+        
+        .price-table th {
+            background-color: var(--secondary);
+            color: var(--text);
+            padding: 12px;
+            text-align: left;
+        }
+        
+        .price-table td {
+            padding: 10px 12px;
+            border-bottom: 1px solid var(--secondary);
+        }
+        
+        .price-table tr:hover {
+            background-color: rgba(0, 119, 182, 0.1);
+        }
+        
+        .whatsapp-btn {
+            background-color: #25D366;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+        
+        .whatsapp-btn:hover {
+            background-color: #128C7E;
+            transform: translateY(-2px);
+        }
+        
+        .whatsapp-btn i {
+            margin-right: 5px;
+        }
+        
+        /* Phone Images */
+        .phone-image {
+            width: 100px;
+            height: 100px;
+            margin-right: 15px;
+            float: left;
+        }
+        
+        .phone-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        
+        .phone-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary);
+            padding: 30px 0 20px;
+            text-align: center;
+            margin-top: 50px;
+        }
+        
+        .footer-contact {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+        
+        .copyright {
+            border-top: 1px solid var(--secondary);
+            padding-top: 20px;
+            font-size: 0.9rem;
+            color: var(--secondary);
+        }
+        
+        /* WhatsApp Float */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+        
+        .whatsapp-float:hover {
+            background-color: #128C7E;
+            transform: translateY(-5px);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul li {
+                margin: 5px 0;
+            }
+            
+            .hero {
+                height: 250px;
+            }
+            
+            .hero-content h2 {
+                font-size: 1.8rem;
+            }
+            
+            .price-tables {
+                flex-direction: column;
+            }
+            
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                font-size: 25px;
+                bottom: 20px;
+                right: 20px;
+            }
+            
+            .phone-image {
+                width: 80px;
+                height: 80px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">CELL&MORE</div>
+            <div class="contact-bar">Contact: +27 68 361 5995</div>
+        </div>
+    </header>
+    
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#phones">Mobile Phones</a></li>
+                <li><a href="#tablets">Tablets</a></li>
+                <li><a href="#gaming">Gaming</a></li>
+                <li><a href="#accessories">Accessories</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h2>PREMIUM ELECTRONICS AT COMPETITIVE PRICES</h2>
+                <p>Certified new and pre-owned electronics with free nationwide delivery and warranty</p>
+                <a href="#phones" class="btn">VIEW PRODUCTS</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Mobile Phones Section -->
+    <section class="container" id="phones">
+        <h2 class="section-title">MOBILE PHONES</h2>
+        
+        <div class="price-section">
+            <div class="price-tables">
+                <div class="price-table-container">
+                    <div class="price-table-title">SAMSUNG PHONES</div>
+                    <table class="price-table">
+                        <thead>
+                            <tr>
+                                <th>Model</th>
+                                <th>Specs</th>
+                                <th>Price (R)</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Samsung A04s</td>
+                                <td>128GB storage</td>
+                                <td>1,000.00</td>
+                                <td><a href="https://wa.me/27683615995?text=I'm%20interested%20in%20Samsung%20A04s" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Chat</a></td>
+                            </tr>
+                            <tr>
+                                <td>Samsung A12</td>
+                                <td>128GB storage</td>
+                                <td>1,200.00</td>
+                                <td><a href="https://wa.me/27683615995?text=I'm%20interested%20in%20Samsung%20A12" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Chat</a></td>
+                            </tr>
+                            <tr>
+                                <td>Samsung A15</td>
+                                <td>128GB storage</td>
+                                <td>1,800.00</td>
+                                <td><a href="https://wa.me/27683615995?text=I'm%20interested%20in%20Samsung%20A15" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Chat</a></td>
+                            </tr>
+                            <tr>
+                                <td>Samsung A33</td>
+                                <td>128GB storage</td>
+                                <td>2,300.00</td>
+                                <td><a href="https://wa.me/27683615995?text=I'm%20interested%20in%20Samsung%20A33" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Chat</a></td>
+                            </tr>
+                            <tr>
+                                <td>Samsung A55 5G</td>
+                                <td>256GB storage</td>
+                                <td>3,800.00</td>
+                                <td><a href="https://wa.me/27683615995?text=I'm%20interested%20in%20Samsung%20A55%205G" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Chat</a></td>
+                            </tr>
+                            <tr>
+                                <td>Samsung Note10+ 5G</td>
+                                <td>256GB storage</td>
+                                <td>5,800.00</td>
+                                <td><a href="https://wa.me/27683615995?text=I'm%20interested%20in%20Samsung%20Note10%2B%205G" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Chat</a></td>
+                            </tr>
+                            <tr>
+                                <td>Samsung Note20 5G</td>
+                                <td>256GB storage</td>
+                                <td>4,999.00</td>
+                                <td><a href="https://wa.me/27683615995?text=I'm%20interested%20in%20Samsung%20Note20%205G" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Chat</a></td>
+                            </tr>
+                            <tr>
+                                <td>Samsung Note20 Ultra 5G</td>
+                                <td>512GB storage</td>
+                                <td>6,999.00</td>
+                                <td><a href="https://wa.me/27683615995?text=I'm%20interested%20in%20Samsung%20Note20%20Ultra%205G" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Chat</a></td>
+                            </tr>
+                            <tr>
+                                <td>Samsung S10</td>
+                                <td>128GB storage</td>
+                                <td>3,500.00</td>
+                                <td><a href="https://wa.me/27683615995?text=I'm%20interested%20in%20Samsung%20S10" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Chat</a></td>
+                            </tr>
+                            <tr>
+                                <td>Samsung Z Flip 4</td>
+                                <td>512GB storage</td>
+                                <td>5,400.00</td>
+                                <td><a href="https://wa.me/27683615995?text=I'm%20interested%20in%20Samsung%20Z%20Flip%204" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Chat</a></td>
+                            </tr>
+                            <tr>
+                                <td>Samsung Z Fold5</td>
+                                <td>512GB storage</td>
+                                <td>13,200.00</td>
+                                <td><a href="https://wa.me/27683615995?text=I'm%20interested%20in%20Samsung%20Z%20Fold5" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Chat</a></td>
+                            </tr>
+                            <tr>
+                                <td>Samsung A14</td>
+                                <td>128GB storage</td>
+                                <td>1,900.00</td>
+                                <td><a href="https://wa.me/27683615995?text=I'm%20interested%20in%20Samsung%20A14" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Chat</a></td>
+                            </tr>
+                            <tr>
+                                <td>Samsung A24</td>
+                                <td>256GB storage</td>
+                                <td>2,100.00</td>
+                                <td><a href="https://wa.me/27683615995?text=I'm%20interested%20in%20Samsung%20A24" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Chat</a></td>
+                            </tr>
+                            <tr>
+                                <td>Samsung A32</td>
+                                <td>256GB storage</td>
+                                <td>1,900.00</td>
+                                <td><a href="https://wa.me/27683615995?text=I'm%20interested%20in%20Samsung%20A32" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Chat</a></td>
+                            </tr>
+                            <tr>
+                                <td>Samsung A53</td>
+                                <td>256GB storage</td>
+                                <td>2,300.00 - 2,500.00</td>
+                                <td><a href="https://wa.me/27683615995?text=I'm%20interested%20in%20Samsung%20A53" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Chat</a></td>
+                            </tr>
+                            <tr>
+                                <td>Samsung S21 Ultra</td>
+                                <td>512GB storage</td>
+                                <td>10,400.00</td>
+                                <td><a href="https://wa.me/27683615995?text=I'm%20interested%20in%20Samsung%20S21%20Ultra" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Chat</a></td>
+                            </tr>
+                            <tr>
+                                <td>Samsung S22 Ultra</td>
+                                <td>256GB storage</td>
+                                <td>14,500.00</td>
+                                <td><a href="https://wa.me/27683615995?text=I'm%20interested%20in%20Samsung%20S22%20Ultra" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Chat</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="price-table-container">
+                    <div class="price-table-title">IPHONES</div>
+                    <table class="price-table">
+                        <thead>
+                            <tr>
+                                <th>Model</th>
+                                <th>Specs</th>
+                                <th>Price (R)</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>iPhone XR</td>
+                                <td>64GB-128GB</td>
+                                <td>5,500.00</td>
+                                <td><a href="https://wa.me/27683615995?text=I'm%20interested%20in%20iPhone%20XR" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Chat</a></td>
+                            </tr>
+                            <tr>
+                                <td>iPhone 16 Plus</td>
+                                <td>128GB/256GB/512GB</td>
+                                <td>19,800.00</td>
+                                <td><a href="https://wa.me/27683615995?text=I'm%20interested%20in%20iPhone%2016%20Plus" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Chat</a></td>
+                            </tr>
+                            <tr>
+                                <td>iPhone 8 Plus</td>
+                                <td>32GB-128GB</td>
+                                <td>2,600.00</td>
+                                <td><a href="https://wa.me/27683615995?text=I'm%20interested%20in%20iPhone%208%20Plus" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Chat</a></td>
+                            </tr>
+                            <tr>
+                                <td>iPhone X</td>
+                                <td>64GB-256GB</td>
+                                <td>4,500.00</td>
+                                <td><a href="https://wa.me/27683615995?text=I'm%20interested%20in%20iPhone%20X" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Chat</a></td>
+                            </tr>
+                            <tr>
+                                <td>iPhone XS Max</td>
+                                <td>64GB/256GB</td>
+                                <td>4,999.00</td>
+                                <td><a href="https://wa.me/27683615995?text=I'm%20interested%20in%20iPhone%20XS%20Max" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Chat</a></td>
+                            </tr>
+                            <tr>
+                                <td>iPhone 11</td>
+                                <td>64GB</td>
+                                <td>5,600.00</td>
+                                <td><a href="https://wa.me/27683615995?text=I'm%20interested%20in%20iPhone%2011" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Chat</a></td>
+                            </tr>
+                            <tr>
+                                <td>iPhone 11 Pro</td>
+                                <td>64GB-512GB</td>
+                                <td>9,800.00</td>
+                                <td><a href="https://wa.me/27683615995?text=I'm%20interested%20in%20iPhone%2011%20Pro" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Chat</a></td>
+                            </tr>
+                            <tr>
+                                <td>iPhone 12</td>
+                                <td>64GB-128GB</td>
+                                <td>9,999.00</td>
+                                <td><a href="https://wa.me/27683615995?text=I'm%20interested%20in%20iPhone%2012" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Chat</a></td>
+                            </tr>
+                            <tr>
+                                <td>iPhone 12 Pro Max</td>
+                                <td>218GB-512GB</td>
+                                <td>11,000.00</td>
+                                <td><a href="https://wa.me/27683615995?text=I'm%20interested%20in%20iPhone%2012%20Pro%20Max" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Chat</a></td>
+                            </tr>
+                            <tr>
+                                <td>iPhone SE 3rd Gen</td>
+                                <td>64GB-128GB</td>
+                                <td>1,200.00</td>
+                                <td><a href="https://wa.me/27683615995?text=I'm%20interested%20in%20iPhone%20SE%203rd%20Gen" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Chat</a></td>
+                            </tr>
+                            <tr>
+                                <td>iPhone 13 Pro Max</td>
+                                <td>512GB</td>
+                                <td>11,999.00</td>
+                                <td><a href="https://wa.me/27683615995?text=I'm%20interested%20in%20iPhone%2013%20Pro%20Max" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Chat</a></td>
+                            </tr>
+                            <tr>
+                                <td>iPhone 14 Plus</td>
+                                <td>256GB-512GB</td>
+                                <td>13,200.00</td>
+                                <td><a href="https://wa.me/27683615995?text=I'm%20interested%20in%20iPhone%2014%20Plus" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Chat</a></td>
+                            </tr>
+                            <tr>
+                                <td>iPhone 14 Pro Max</td>
+                                <td>128GB-256GB-512GB</td>
+                                <td>13,999.00</td>
+                                <td><a href="https://wa.me/27683615995?text=I'm%20interested%20in%20iPhone%2014%20Pro%20Max" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Chat</a></td>
+                            </tr>
+                            <tr>
+                                <td>iPhone 15 Plus</td>
+                                <td>128GB-256GB-512GB</td>
+                                <td>16,450.00</td>
+                                <td><a href="https://wa.me/27683615995?text=I'm%20interested%20in%20iPhone%2015%20Plus" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Chat</a></td>
+                            </tr>
+                            <tr>
+                                <td>iPhone 15 Pro Max</td>
+                                <td>56GB-512GB</td>
+                                <td>19,000.00</td>
+                                <td><a href="https://wa.me/27683615995?text=I'm%20interested%20in%20iPhone%2015%20Pro%20Max" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Chat</a></td>
+                            </tr>
+                            <tr>
+                                <td>iPhone 16 Pro Max</td>
+                                <td>128GB/256GB/512GB</td>
+                                <td>20,999.00</td>
+                                <td><a href="https://wa.me/27683615995?text=I'm%20interested%20in%20iPhone%2016%20Pro%20Max" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Chat</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="price-table-container">
+                    <div class="price-table-title">VIVO PHONES</div>
+                    <table class="price-table">
+                        <thead>
+                            <tr>
+                                <th>Model</th>
+                                <th>Specs</th>
+                                <th>Price (R)</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Vivo Y03</td>
+                                <td>128GB storage</td>
+                                <td>1,400.00</td>
+                                <td><a href="https://wa.me/27683615995?text=I'm%20interested%20in%20Vivo%20Y03" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Chat</a></td>
+                            </tr>
+                            <tr>
+                                <td>Vivo Y12</td>
+                                <td>128GB storage</td>
+                                <td>2,600.00</td>
+                                <td><a href="https://wa.me/27683615995?text=I'm%20interested%20in%20Vivo%20Y12" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Chat</a></td>
+                            </tr>
+                            <tr>
+                                <td>Vivo Y21</td>
+                                <td>128GB storage</td>
+                                <td>3,500.00</td>
+                                <td><a href="https://wa.me/27683615995?text=I'm%20interested%20in%20Vivo%20Y21" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Chat</a></td>
+                            </tr>
+                            <tr>
+                                <td>Vivo Y25 5G</td>
+                                <td>256GB storage</td>
+                                <td>3,500.00</td>
+                                <td><a href="https://wa.me/27683615995?text=I'm%20interested%20in%20Vivo%20Y25%205G" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Chat</a></td>
+                            </tr>
+                            <tr>
+                                <td>Vivo Y36</td>
+                                <td>256GB storage</td>
+                                <td>3,999.00</td>
+                                <td><a href="https://wa.me/27683615995?text=I'm%20interested%20in%20Vivo%20Y36" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Chat</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="price-table-container">
+                    <div class="price-table-title">HUAWEI PHONES</div>
+                    <table class="price-table">
+                        <thead>
+                            <tr>
+                                <th>Model</th>
+                                <th>Specs</th>
+                                <th>Price (R)</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Huawei P50 Pro</td>
+                                <td>512GB storage</td>
+                                <td>10,999.00</td>
+                                <td><a href="https://wa.me/27683615995?text=I'm%20interested%20in%20Huawei%20P50%20Pro" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Chat</a></td>
+                            </tr>
+                            <tr>
+                                <td>Huawei P60 Pro</td>
+                                <td>512GB storage</td>
+                                <td>12,999.00</td>
+                                <td><a href="https://wa.me/27683615995?text=I'm%20interested%20in%20Huawei%20P60%20Pro" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Chat</a></td>
+                            </tr>
+                            <tr>
+                                <td>Huawei Nova Y61</td>
+                                <td>64GB storage</td>
+                                <td>2,000.00</td>
+                                <td><a href="https://wa.me/27683615995?text=I'm%20interested%20in%20Huawei%20Nova%20Y61" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Chat</a></td>
+                            </tr>
+                            <tr>
+                                <td>Huawei Nova Y70</td>
+                                <td>128GB storage</td>
+                                <td>3,200.00</td>
+                                <td><a href="https://wa.me/27683615995?text=I'm%20interested%20in%20Huawei%20Nova%20Y70" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Chat</a></td>
+                            </tr>
+                            <tr>
+                                <td>Huawei Nova Y72</td>
+                                <td>128GB storage</td>
+                                <td>4,900.00</td>
+                                <td><a href="https://wa.me/27683615995?text=I'm%20interested%20in%20Huawei%20Nova%20Y72" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Chat</a></td>
+                            </tr>
+                            <tr>
+                                <td>Huawei Nova 8i</td>
+                                <td>128GB storage</td>
+                                <td>4,700.00</td>
+                                <td><a href="https://wa.me/27683615995?text=I'm%20interested%20in%20Huawei%20Nova%208i" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Chat</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Tablets Section -->
+    <section class="container" id="tablets">
+        <h2 class="section-title">TABLETS</h2>
+        
+        <div class="price-section">
+            <div class="price-tables">
+                <div class="price-table-container">
+                    <div class="price-table-title">APPLE IPADS</div>
+                    <table class="price-table">
+                        <thead>
+                            <tr>
+                                <th>Model</th>
+                                <th>Specs</th>
+                                <th>Price (R)</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>iPad mini 6</td>
+                                <td>64GB storage</td>
+                                <td>2,999.00</td>
+                                <td><a href="https://wa.me/27683615995?text=I'm%20interested%20in%20iPad%20mini%206" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Chat</a></td>
+                            </tr>
+                            <tr>
+                                <td>iPad Pro 11-inch 2nd Gen</td>
+                                <td>256GB storage</td>
+                                <td>4,999.00</td>
+                                <td><a href="https://wa.me/27683615995?text=I'm%20interested%20in%20iPad%20Pro%2011-inch%202nd%20Gen" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Chat</a></td>
+                            </tr>
+                            <tr>
+                                <td>iPad Pro 11-inch M1 Chip</td>
+                                <td>256GB storage</td>
+                                <td>4,600.00</td>
+                                <td><a href="https://wa.me/27683615995?text=I'm%20interested%20in%20iPad%20Pro%2011-inch%20M1%20Chip" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Chat</a></td>
+                            </tr>
+                            <tr>
+                                <td>iPad Pro 4th Gen</td>
+                                <td>256GB storage</td>
+                                <td>4,999.00</td>
+                                <td><a href="https://wa.me/27683615995?text=I'm%20interested%20in%20iPad%20Pro%204th%20Gen" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Chat</a></td>
+                            </tr>
+                            <tr>
+                                <td>iPad Pro M4 Chip</td>
+                                <td>256GB storage</td>
+                                <td>3,000.00</td>
+                                <td><a href="https://wa.me/27683615995?text=I'm%20interested%20in%20iPad%20Pro%20M4%20Chip" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Chat</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="price-table-container">
+                    <div class="price-table-title">SAMSUNG TABLETS</div>
+                    <table class="price-table">
+                        <thead>
+                            <tr>
+                                <th>Model</th>
+                                <th>Specs</th>
+                                <th>Price (R)</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Samsung Galaxy Tab A7</td>
+                                <td>32GB storage</td>
+                                <td>1,200.00</td>
+                                <td><a href="https://wa.me/27683615995?text=I'm%20interested%20in%20Samsung%20Galaxy%20Tab%20A7" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Chat</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+        <!-- Gaming Section -->
+    <section class="container" id="gaming">
+        <h2 class="section-title">GAMING CONSOLES</h2>
+        
+        <div class="price-section">
+            <div class="price-tables">
+                <div class="price-table-container">
+                    <div class="price-table-title">PLAYSTATION</div>
+                    <table class="price-table">
+                        <thead>
+                            <tr>
+                                <th>Model</th>
+                                <th>Specs</th>
+                                <th>Price (R)</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>PlayStation 4</td>
+                                <td>500GB storage</td>
+                                <td>2,500.00</td>
+                                <td><a href="https://wa.me/27683615995?text=I'm%20interested%20in%20PlayStation%204" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Chat</a></td>
+                            </tr>
+                            <tr>
+                                <td>PlayStation 5</td>
+                                <td>500GB storage</td>
+                                <td>6,500.00</td>
+                                <td><a href="https://wa.me/27683615995?text=I'm%20interested%20in%20PlayStation%205" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Chat</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Accessories Section -->
+    <section class="container" id="accessories">
+        <h2 class="section-title">ACCESSORIES</h2>
+        
+        <div class="price-section">
+            <div class="price-tables">
+                <div class="price-table-container">
+                    <div class="price-table-title">AUDIO</div>
+                    <table class="price-table">
+                        <thead>
+                            <tr>
+                                <th>Model</th>
+                                <th>Specs</th>
+                                <th>Price (R)</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Apple Airpods 4</td>
+                                <td>Original box</td>
+                                <td>999.00</td>
+                                <td><a href="https://wa.me/27683615995?text=I'm%20interested%20in%20Apple%20Airpods%204" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Chat</a></td>
+                            </tr>
+                            <tr>
+                                <td>JBL Soundbar</td>
+                                <td>Brand new</td>
+                                <td>990.00</td>
+                                <td><a href="https://wa.me/27683615995?text=I'm%20interested%20in%20JBL%20Soundbar" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Chat</a></td>
+                            </tr>
+                            <tr>
+                                <td>Samsung Soundbar</td>
+                                <td>Model HWQ990</td>
+                                <td>900.00</td>
+                                <td><a href="https://wa.me/27683615995?text=I'm%20interested%20in%20Samsung%20Soundbar" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Chat</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="price-table-container">
+                    <div class="price-table-title">WEARABLES</div>
+                    <table class="price-table">
+                        <thead>
+                            <tr>
+                                <th>Model</th>
+                                <th>Specs</th>
+                                <th>Price (R)</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Apple Watch SE</td>
+                                <td>Advanced health features</td>
+                                <td>2,000.00</td>
+                                <td><a href="https://wa.me/27683615995?text=I'm%20interested%20in%20Apple%20Watch%20SE" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Chat</a></td>
+                            </tr>
+                            <tr>
+                                <td>Apple Watch Series 7</td>
+                                <td>Size:45mm</td>
+                                <td>1,800.00</td>
+                                <td><a href="https://wa.me/27683615995?text=I'm%20interested%20in%20Apple%20Watch%20Series%207" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Chat</a></td>
+                            </tr>
+                            <tr>
+                                <td>Apple Watch Series 8</td>
+                                <td>Display:1.80" with sapphire crystal</td>
+                                <td>1,800.00</td>
+                                <td><a href="https://wa.me/27683615995?text=I'm%20interested%20in%20Apple%20Watch%20Series%208" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Chat</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="price-table-container">
+                    <div class="price-table-title">COMPUTERS</div>
+                    <table class="price-table">
+                        <thead>
+                            <tr>
+                                <th>Model</th>
+                                <th>Specs</th>
+                                <th>Price (R)</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>MacBook Air</td>
+                                <td>512GB SSD</td>
+                                <td>8,999.00</td>
+                                <td><a href="https://wa.me/27683615995?text=I'm%20interested%20in%20MacBook%20Air" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Chat</a></td>
+                            </tr>
+                            <tr>
+                                <td>iMac OS Sonoma 2013</td>
+                                <td>Core i5</td>
+                                <td>4,500.00</td>
+                                <td><a href="https://wa.me/27683615995?text=I'm%20interested%20in%20iMac%20OS%20Sonoma%202013" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Chat</a></td>
+                            </tr>
+                             <tr>
+                                <td>lenovo IdeaPad</td>
+                                <td>core i8</td>
+                                <td>2,500.00</td>
+                                <td><a href="https://wa.me/27683615995?text=I'm%20interested%20in%20iMac%20OS%20Sonoma%202013" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Chat</a></td>
+                            </tr>
+                             <tr>
+                                <td>Hp spectre X360 lintel Evo Core</td>
+                                <td>32Gb Ram</td>
+                                <td>2,200.00</td>
+                                <td><a href="https://wa.me/27683615995?text=I'm%20interested%20in%20iMac%20OS%20Sonoma%202013" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Chat</a></td>
+                                </tr>
+                                <tr>
+                                <td>Dell laptop</td>
+                                <td>core i5</td>
+                                <td>2,000.00</td>
+                                <td><a href="https://wa.me/27683615995?text=I'm%20interested%20in%20iMac%20OS%20Sonoma%202013" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Chat</a></td>
+                            </tr>
+                             <tr>
+                                <td>HP notbook</td>
+                                <td>8Gb Ram</td>
+                                <td>2,300.00</td>
+                                <td><a href="https://wa.me/27683615995?text=I'm%20interested%20in%20iMac%20OS%20Sonoma%202013" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Chat</a></td>
+                            </tr>
+                            </tbody>
+                    </table>
+                </div>
+                                            <div class="price-table-container">
+                    <div class="price-table-title">CAMERAS</div>
+                    <table class="price-table">
+                        <thead>
+                            <tr>
+                                <th>Model</th>
+                                <th>Specs</th>
+                                <th>Price (R)</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Canon 600D</td>
+                                <td>Qualitysensor</td>
+                                <td>3,500.00</td>
+                                <td><a href="https://wa.me/27683615995?text=I'm%20interested%20in%20MacBook%20Air" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Chat</a></td>
+                            </tr>
+         
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- About Section -->
+    <section class="container" id="about">
+        <h2 class="section-title">ABOUT CELL&MORE</h2>
+        <div style="text-align: center; margin-bottom: 50px; max-width: 800px; margin-left: auto; margin-right: auto;">
+            <p style="font-size: 1.2rem; margin-bottom: 20px;">
+                Cell&More offers certified new and pre-owned electronics with free nationwide delivery via courier. 
+                All our products come with warranty for your peace of mind.
+            </p>
+            <div style="background-color: var(--secondary); padding: 20px; border-radius: 10px;">
+                <h3 style="color: var(--accent); margin-bottom: 15px;">PURCHASING PROCEDURE</h3>
+                <ol style="text-align: left; margin-left: 20px;">
+                    <li style="margin-bottom: 10px;">Browse our catalog and select your desired product</li>
+                    <li style="margin-bottom: 10px;">Contact us via WhatsApp or phone to confirm availability</li>
+                    <li style="margin-bottom: 10px;">Make payment via secure methods</li>
+                    <li style="margin-bottom: 10px;">Receive your product with free nationwide delivery</li>
+                    <li>Enjoy your purchase with warranty protection</li>
+                </ol>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact -->
+    <section class="container" id="contact">
+        <h2 class="section-title">CONTACT CELL&MORE</h2>
+        <div style="text-align: center; margin-bottom: 50px;">
+            <p style="font-size: 1.2rem; margin-bottom: 20px;">Ready to get your perfect device? Contact us today!</p>
+            <div style="background-color: var(--secondary); padding: 30px; border-radius: 10px; max-width: 600px; margin: 0 auto;">
+                <p style="font-size: 1.3rem; margin-bottom: 15px;"><i class="fas fa-phone" style="margin-right: 10px; color: var(--accent);"></i> <strong>Phone/WhatsApp:</strong> +27 68 361 5995</p>
+                <a href="https://wa.me/27683615995" class="btn" style="display: inline-block; margin-top: 15px;"><i class="fab fa-whatsapp"></i> CHAT ON WHATSAPP</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-contact">
+                <p>CELL&MORE - Certified New and Pre-owned Electronics</p>
+                <p>Contact: +27 68 361 5995</p>
+                <p>Free Nationwide Delivery | Warranty Included</p>
+            </div>
+            <div class="copyright">
+                &copy; 2025 CELL&MORE. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+    
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/27683615995" class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
